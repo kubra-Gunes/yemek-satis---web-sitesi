@@ -1,0 +1,293 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background-color: #fff;
+    color: #ea004b;
+    border: 2px solid #7602268d;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #ea004b;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    height: 200px; /* Sabit yükseklik */
+    object-fit: cover; /* Resimleri orantılı şekilde kesme */
+    border-radius: 10px;
+}
+.product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.product p {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+
+.product button {
+    background-color: #ea004b;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.product button:hover {
+    background-color: hsla(341, 51%, 56%, 0.937);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ea004b;
+    color: white;
+}
+
+
+/* Header Üst Kısmı */
+header {
+    background-color: #ea004b;
+    color: white;
+    padding: 10px 20px;
+}
+.header-container {
+    display: flex; /* Nesneleri yan yana hizalamak için */
+    align-items: center; /* Dikeyde ortalamak için */
+    justify-content: space-between; /* Nesneler arasında boşluk bırakmak için */
+    
+}
+.logo img {
+    height: 50px; /* Logonun boyutunu kontrol etmek için */
+}
+
+.address-select select {
+    padding: 5px;
+}
+
+.search-bar input {
+    padding: 5px;
+    width: 200px; /* Arama çubuğu genişliği */
+}
+
+.header-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.header-icons button img {
+    height: 30px; /* İkonların boyutunu ayarlamak için */
+}
+
+.header-top button:hover {
+    background-color: #730326b7;
+    color: white;
+}
+
+
+/****************************************************************************/
+
+/* Modal için stil */
+.modal {
+    display: none; /* Başlangıçta gizle */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Favoriler ve Sepet Listesi */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ea004b;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color:#ed5987f0;
+}
+
+
+/*****************************************************************/
+/* Genel form düzenlemeleri */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Placeholder stili */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+/* Textarea özel stili */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Seçim kutuları ve input'lar için margin düzenlemesi */
+.form-group select,
+.form-group input,
+.form-group textarea {
+    margin-top: 5px;
+}
+
+/* Adres başlığı ve tarifi için kutuların daha geniş görünmesini sağla */
+.form-group textarea {
+    height: 100px;
+}
+
+/* Şehir, İlçe, Mahalle kutularının stilleri */
+.form-group select {
+    cursor: pointer;
+}
+
+/* Etiketlerin üst kısmında açıklamalar için */
+.form-group label {
+    color: #333;
+}
+
+/* Formu düzgün bir şekilde hizalamak için */
+.form-group {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Sokak, Bina No ve Kat numarası için daha geniş input alanları */
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    max-width: 100%;
+    padding: 10px;
+}
+
+/* Butonlar için stil */
+button {
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    color: #ea004b;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b3006e;
+}
+

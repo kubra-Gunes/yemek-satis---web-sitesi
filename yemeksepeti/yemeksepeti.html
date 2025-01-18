@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Sepeti</title>
+    <link rel="stylesheet" href="yemeksepeti.css">
+</head>
+
+<body>
+    <header>
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="https://kurumsal.yemeksepeti.com/wp-content/uploads/2023/11/Yemeksepeti-2.jpg" alt="Logo">
+                </div>
+                <!-- Adres Seçin Butonu -->
+                <button onclick="openAddressModal()">Adres Seçin</button>
+
+                <!-- Adres Modalı -->
+                <div id="address-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('address-modal')">&times;</span>
+                        <h2>Adres Seçin</h2>
+
+                        <!-- Adres Formu -->
+                        <div class="form-group">
+                            <label for="city">Şehir</label>
+                            <select id="city" name="city" required onchange="updateDistricts()">
+                                <option value="">Şehir Seçiniz</option>
+                                <option value="erzincan">Erzincan</option>
+                                <option value="istanbul">İstanbul</option>
+                                <option value="ankara">Ankara</option>
+                                <option value="izmir">İzmir</option>
+                                <option value="bursa">Bursa</option>
+                                <option value="antalya">Antalya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">İlçe</label>
+                            <select id="district" name="district" required>
+                                <option value="">Önce Şehir Seçiniz</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="neighborhood">Mahalle</label>
+                            <select id="neighborhood" name="neighborhood" required>
+                                <option value="">Önce İlçe Seçiniz</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Sokak/Cadde</label>
+                            <input type="text" id="street" name="street" placeholder="Sokak veya cadde adı" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buildingNo">Bina No</label>
+                            <input type="text" id="buildingNo" name="buildingNo" placeholder="Bina numarası" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="floor">Kat</label>
+                            <input type="number" id="floor" name="floor" placeholder="Kat numarası" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apartmentNo">Daire No</label>
+                            <input type="number" id="apartmentNo" name="apartmentNo" placeholder="Daire numarası"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressTitle">Adres Başlığı</label>
+                            <input type="text" id="addressTitle" name="addressTitle" placeholder="Örn: Ev, İş" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressNote">Adres Tarifi</label>
+                            <textarea id="addressNote" name="addressNote"
+                                placeholder="Varsa adres tarifi yazın (opsiyonel)" rows="3"></textarea>
+                        </div>
+
+                        <!-- Adres Ekle Butonu -->
+                        <button onclick="addAddress()">Adres Ekle</button>
+
+                        <!-- Başarı mesajı -->
+                        <div id="success-message" style="display: none; color: green; margin-top: 20px;">
+                            <p>Adres başarıyla eklendi!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Ürün ara..." oninput="handleSearch()" />
+                </div>
+
+                <div class="header-icons">
+                    <button onclick="viewFavorites()">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/like.png" alt="Favoriler">
+                    </button>
+                    <button onclick="viewCart()">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Sepet">
+                    </button>
+                    <button onclick="viewProfile()">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Kullanıcı">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <button onclick="loadAllProducts()">Tüm Ürünler</button>
+            <button onclick="loadCategory('durum')">Dürüm</button>
+            <button onclick="loadCategory('hamburger')">Hamburger</button>
+            <button onclick="loadCategory('pizza')">Pizza</button>
+            <button onclick="loadCategory('evyemegi')">Ev Yemekleri</button>
+            <button onclick="loadCategory('lahmacunPide')">Lahmacun & Pide</button>
+            <button onclick="loadCategory('icecek')">İçecekler</button>
+        </nav>
+    </header>
+    <main id="product-container"></main>
+
+    <!-- Favoriler Modalı -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('favorites-modal')">&times;</span>
+            <h2>Favorileriniz</h2>
+            <ul id="favorites-list"></ul>
+        </div>
+    </div>
+
+    <!-- Sepet Modalı -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('cart-modal')">&times;</span>
+            <h2>Sepetiniz</h2>
+            <ul id="cart-list"></ul>
+            <p id="total-price">Toplam: 0 TL</p>
+            <!-- Sepeti Onayla Butonu -->
+            <button onclick="confirmOrder()">Sepeti Onayla</button>
+            <button onclick="openAddressModal()">Adres Ekle</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>© 2025 Yemek Sepeti. Tüm Hakları Saklıdır.</p>
+    </footer>
+    <script src="yemeksepeti.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+/* Genel stil */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Giriş formunun kapsayıcısı */
+.login-container {
+    background: #ffffff;
+    padding: 30px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Giriş formu */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input:focus {
+    border-color:  #ea004b;
+    outline: none;
+    box-shadow: 0 0 4px rgba(255, 87, 51, 0.6);
+}
+
+form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ea004b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color:  #ce6083;
+}
+
+/* Kayıt bağlantısı */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ea004b;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.register-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    color: #ea004b;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #ea004b;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ea004b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d0003f;
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+a {
+    color: #ea004b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Adres Bölümü Stilleri */
+h3 {
+    color: #333;
+    margin: 20px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #ea004b;
+}
+
+/* Adres başlığı için özel stil */
+#addressTitle {
+    text-transform: capitalize;
+}
+
+/* Seçim kutuları için özel stil */
+select {
+    cursor: pointer;
+    background-color: white;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 1.2em auto;
+    padding-right: 2.5em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Disabled seçenekler için stil */
+select:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Adres notu için stil */
+#addressNote {
+    margin-top: 5px;
+}
+
+/* Zorunlu alan işareti */
+.form-group label::after {
+    content: "*";
+    color: #ea004b;
+    margin-left: 4px;
+}
+
+/* Adres notu için zorunlu alan işaretini kaldır */
+label[for="addressNote"]::after {
+    content: "";
+} 

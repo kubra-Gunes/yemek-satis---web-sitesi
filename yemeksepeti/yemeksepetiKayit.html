@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Sepeti - Kayıt Ol</title>
+    <link rel="stylesheet" href="yemeksepetiKayit.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Yemek Sepeti</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Yaş</label>
+                <input type="number" id="age" name="age" placeholder="Yaşınızı girin" required>
+            </div>
+            
+            <!-- Adres Bilgileri -->
+            <h3>Adres Bilgileri</h3>
+            <div class="form-group" >
+                <label for="city">Şehir</label>
+                <select id="city" name="city" required onchange="updateDistricts()">
+                    <option value="">Şehir Seçiniz</option>
+                    <option value="erzincan">Erzincan</option>
+                    <option value="istanbul">İstanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="izmir">İzmir</option>
+                    <option value="bursa">Bursa</option>
+                    <option value="antalya">Antalya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="district">İlçe</label>
+                <select id="district" name="district" required>
+                    <option value="">Önce Şehir Seçiniz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">Mahalle</label>
+                <select id="neighborhood" name="neighborhood" required>
+                    <option value="">Önce İlçe Seçiniz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="street">Sokak/Cadde</label>
+                <input type="text" id="street" name="street" placeholder="Sokak veya cadde adı" required>
+            </div>
+            <div class="form-group">
+                <label for="buildingNo">Bina No</label>
+                <input type="text" id="buildingNo" name="buildingNo" placeholder="Bina numarası" required>
+            </div>
+            <div class="form-group">
+                <label for="floor">Kat</label>
+                <input type="number" id="floor" name="floor" placeholder="Kat numarası" required>
+            </div>
+            <div class="form-group">
+                <label for="apartmentNo">Daire No</label>
+                <input type="number" id="apartmentNo" name="apartmentNo" placeholder="Daire numarası" required>
+            </div>
+            <div class="form-group">
+                <label for="addressTitle">Adres Başlığı</label>
+                <input type="text" id="addressTitle" name="addressTitle" placeholder="Örn: Ev, İş" required>
+            </div>
+            <div class="form-group">
+                <label for="addressNote">Adres Tarifi</label>
+                <textarea id="addressNote" name="addressNote" placeholder="Varsa adres tarifi yazın (opsiyonel)" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Cinsiyet</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Cinsiyet Seçiniz</option>
+                    <option value="erkek">Erkek</option>
+                    <option value="kadın">Kadın</option>
+                    <option value="diger">Diğer</option>
+                </select>
+            </div>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+        <p>Hesabınız var mı? <a href="yemeksepetiGiriş.html">Giriş Yap</a></p>
+    </div>
+    <script src="yemeksepetiKayit.js"></script>
+</body>
+</html> 
